@@ -61,53 +61,54 @@ const letters = [
 ];
 const mayusLetters = [...letters].map((letter) => letter.toUpperCase());
 
-let passwordLength = 6;
+let password = "";
+let passwordLength;
 let base = [];
+
 let parametros = {
- simbolos: false,
- numeros: false,
- mayus: false,
+ numberCheck: false,
+ mayusCheck: false,
+ symbolCheck: false,
 };
 
 const random = () => {
- let password = "";
+ password = "";
  for (let i = 0; i < passwordLength; i++) {
   password += base[Math.floor(Math.random() * base.length)];
  }
- return password;
 };
 
-const generatePassword = ({ simbolos, numeros, mayus }) => {
+const generatePassword = ({ numberCheck, mayusCheck, symbolCheck }) => {
  switch (true) {
-  case simbolos && numeros && mayus:
+  case numberCheck && mayusCheck && symbolCheck:
    base = [...letters, ...numbers, ...symbols, ...mayusLetters];
    break;
 
-  case numeros && simbolos:
+  case numberCheck && symbolCheck:
    base = [...letters, ...numbers, ...symbols];
-   break;
+   break; 
 
-  case numeros && mayus:
+  case numberCheck && mayusCheck:
    base = [...letters, ...numbers, ...mayusLetters];
    break;
 
-  case simbolos && mayus:
+  case symbolCheck && mayusCheck:
    base = [...letters, ...symbols, ...mayusLetters];
    break;
 
-  case numeros && simbolos:
+  case numberCheck && symbolCheck:
    base = [...letters, ...numbers, ...symbols];
    break;
 
-  case mayus:
+  case mayusCheck:
    base = [...letters, ...mayusLetters];
    break;
 
-  case numeros:
+  case numberCheck:
    base = [...letters, ...numbers];
    break;
 
-  case simbolos:
+  case symbolCheck:
    base = [...letters, ...symbols];
    break;
 
@@ -115,5 +116,35 @@ const generatePassword = ({ simbolos, numeros, mayus }) => {
    base = [...letters];
  }
 
- return random();
+ random();
+ showpass.innerText = password;
 };
+
+// ---------------- DOM -----------------------------
+
+const button = document.getElementById("generatorButton");
+button.addEventListener("click", () => {
+ generatePassword(parametros);
+});
+
+const showpass = document.getElementById("showpass");
+const lengthSelect = document.getElementById("length_options");
+lengthSelect.addEventListener("change", () => {
+ passwordLength = lengthSelect.value;
+});
+
+const handleCheck = (event) => {
+ if (event.target.checked) {
+  parametros[event.target.name] = event.target.checked;
+ } else {
+  parametros[event.target.name] = false;
+ }
+};
+
+const numberCheck = document.getElementById("number_check");
+const mayusCheck = document.getElementById("mayus_check");
+const symbolCheck = document.getElementById("symbol_check");
+
+numberCheck.addEventListener("change", handleCheck);
+mayusCheck.addEventListener("change", handleCheck);
+symbolCheck.addEventListener("change", handleCheck);
