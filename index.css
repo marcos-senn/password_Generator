@@ -1,10 +1,20 @@
+body{
+background: #5C258D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
 .container{
-    margin: 100px 500px;
+    margin: 100px 40vw;
     width: 400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid #7ac2dac2;
+    background-color: #68AF96;
+    border-radius: 10px;
 }
 
 .show_container{
@@ -24,7 +34,12 @@
     align-items: center;
     width: 300px;
     height: 60px;
-    border: 1px solid red;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #ACCEA0;
+    color: #A77EE5;
+    font-weight: bold;
+
 }
 
 .form-container{
@@ -35,4 +50,15 @@
 .button_container{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.button{
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+}
+
+.button:hover{
+    background-color: #A77EE5;
+    color: #fff;
 }
