@@ -17,13 +17,17 @@
    crossorigin="anonymous"
   ></script>
 
+  <link rel="stylesheet" href="./index.css">
+
   <title>Password Generator</title>
  </head>
  <body>
-  <div class="Container">
-   <div>
+  <div class="container">
+   <div class="show_container">
     <h1>Password</h1>
+    <div class="showpass_container">
     <span id="showpass"></span>
+  </div>
    </div>
 
    <div>
@@ -35,7 +39,7 @@
       </select>
    </div>
 
-   <div>
+   <div class="form-container">
     <div class="form-check">
      <input
       class="form-check-input"
@@ -74,11 +78,13 @@
       Agregar letras mayúsculas
      </label>
     </div>
+    <div class="button_container">
+      <button id="generatorButton">Generar</button>
+     </div>
    </div>
-   <div>
-    <button id="generatorButton">Generar</button>
-   </div>
+   
   </div>
+  
   <script src="./index.js"></script>
  </body>
 </html>
