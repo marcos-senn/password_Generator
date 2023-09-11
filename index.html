@@ -17,7 +17,7 @@
    crossorigin="anonymous"
   ></script>
 
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./css/index.css" />
 
   <title>Password Generator</title>
  </head>
@@ -26,17 +26,21 @@
    <div class="show_container">
     <h1>Password</h1>
     <div class="showpass_container">
-    <span id="showpass"></span>
-  </div>
+     <span id="showpass"></span>
+    </div>
    </div>
 
    <div>
-    <select class="form-select" aria-label="Default select example" id="length_options">
-        <option selected>Largo de la contraseña</option>
-        <option value="8">8</option>
-        <option value="12">12</option>
-        <option value="16">16</option>
-      </select>
+    <select
+     class="form-select"
+     aria-label="Default select example"
+     id="length_options"
+    >
+     <option selected>Largo de la contraseña</option>
+     <option value="8">8</option>
+     <option value="12">12</option>
+     <option value="16">16</option>
+    </select>
    </div>
 
    <div class="form-container">
@@ -79,12 +83,11 @@
      </label>
     </div>
     <div class="button_container">
-      <button id="generatorButton" class="button">Generar</button>
-     </div>
+     <button id="generatorButton" class="button">Generar</button>
+    </div>
    </div>
-   
   </div>
-  
-  <script src="./index.js"></script>
+
+  <script src="./js/index.js"></script>
  </body>
 </html>

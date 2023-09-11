@@ -59,6 +59,7 @@ const letters = [
  "y",
  "z",
 ];
+
 const mayusLetters = [...letters].map((letter) => letter.toUpperCase());
 
 let password = "";
@@ -79,6 +80,7 @@ const random = () => {
 };
 
 const generatePassword = ({ numberCheck, mayusCheck, symbolCheck }) => {
+
  switch (true) {
   case numberCheck && mayusCheck && symbolCheck:
    base = [...letters, ...numbers, ...symbols, ...mayusLetters];
@@ -86,7 +88,7 @@ const generatePassword = ({ numberCheck, mayusCheck, symbolCheck }) => {
 
   case numberCheck && symbolCheck:
    base = [...letters, ...numbers, ...symbols];
-   break; 
+   break;
 
   case numberCheck && mayusCheck:
    base = [...letters, ...numbers, ...mayusLetters];
@@ -124,7 +126,9 @@ const generatePassword = ({ numberCheck, mayusCheck, symbolCheck }) => {
 
 const button = document.getElementById("generatorButton");
 button.addEventListener("click", () => {
+  console.log("Botón Generar clickeado"),
  generatePassword(parametros);
+
 });
 
 const showpass = document.getElementById("showpass");

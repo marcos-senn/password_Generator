@@ -2,7 +2,7 @@ body{
 background: #5C258D;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+color: #fffde6;
 }
 
 
@@ -13,7 +13,7 @@ background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, F
     flex-wrap: wrap;
     justify-content: center;
     border: 1px solid #7ac2dac2;
-    background-color: #68AF96;
+    background-color: #FEA1A1;
     border-radius: 10px;
 }
 
@@ -36,7 +36,7 @@ background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, F
     height: 60px;
     border: 1px solid transparent;
     border-radius: 10px;
-    background-color: #ACCEA0;
+    background-color: #eccdb48a;
     color: #A77EE5;
     font-weight: bold;
 
@@ -60,5 +60,5 @@ background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, F
 
 .button:hover{
     background-color: #A77EE5;
-    color: #fff;
+    color: #F0EDD4;
 }
